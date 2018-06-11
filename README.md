@@ -43,7 +43,15 @@ public class BtapBietLe3 {
 		if(ht==0)	
 			if(hc==0)
 				return doc1So(hd);
-			else if(hd!=0)	//đọc số có 2 chữ số màng hàng đơn vị khác 0
+			else if(hc==1&&hd==0)
+			{
+				return "muoi";
+			}
+			else if(hc==1&&hd!=0)
+			{
+				return "muoi " + doc1So(hd);
+			}
+			else if(hc!=1&&hc!=0&&hd!=0)	//đọc số có 2 chữ số màng hàng đơn vị khác 0, khac 1
 			{
 				return doc1So(hc) + " muoi "+ doc1So(hd);
 			}
@@ -51,7 +59,19 @@ public class BtapBietLe3 {
 			{
 				return doc1So(hc) + " muoi";
 			}
-		else if(hc!=0&&hd!=0)	//đọc số có 3 chữ số mà hàng chục và đơn vị khắc 0
+		else if(hc==1&&hd==0)
+		{
+			return doc1So(ht)+" tram muoi";
+		}
+		else if(hc==1&&hd!=0)
+		{
+			return doc1So(ht)+" tram muoi "+doc1So(hd);
+		}
+		else if(hc!=0&&hc!=1&&hd==0)
+		{
+			return doc1So(ht)+" tram " +doc1So(hc)+" muoi";
+		}
+		else if(hc!=0&&hc!=1&&hd!=0)	//đọc số có 3 chữ số mà hàng chục và đơn vị khắc 0
 		{
 			return doc1So(ht) + " tram " + doc1So(hc) + " muoi "+ doc1So(hd);		
 		}
