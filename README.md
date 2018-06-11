@@ -67,20 +67,20 @@ public class BtapBietLe3 {
 	//Ham main
 	public static void main(String[] args) {
 		int so=0;
-		do {
+		do {	//Vòng lặp khi nhập sai đầu vào
 			Scanner scan = new Scanner(System.in);
 			System.out.print("Nhap 1 so (0-999): ");
-			try {
+			try {	//Nhập sai không phải là số
 				so = scan.nextInt();
 			}catch(Exception ex) {
 				System.out.println("\tSo nhap khong hop kieu\n");
-				continue;
+				continue;	//để bỏ qua phần còn lại của vòng lặp, và quay lên trên lại
 			}
-			if(so<0||so>999)
-				System.out.println("\tSo nhap phai tu 0 den 9\n");
+			if(so<0||so>999)	//kiểm tra só phải nằm trong giới hạn
+				System.out.println("\tSo nhap phai tu 0 den 999\n");
 		}
-		while(so<0||so>999);
-		System.out.println("Chu so la: "+doc3So(so));
+		while(so<0||so>999); //In ra 
+		System.out.println("Chu so la: " + doc3So(so));
 	}
 }
 ```
